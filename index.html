@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Worst Security System Ever</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>FACILITY SECURITY SYSTEM</h1>
+
+    <main class="console">
+        <header class ="console-header">
+            <div>
+                <p class="eyebrow">FACILITY 404</p>
+                <h1>SECURITY CONTROL</h1>
+            </div>
+
+            <div class="security-level">
+                LEVEL <span id="levelText">1</span>
+            </div>
+        </header>
+
+        <section class="screen">
+            <div id="lockIcon" class="lock-icon">LOCKED</div>
+            <p id="message">Scan your ID to begin.</p>
+            <p class="status-line">
+                STATUS: <span id="statusText">ACCESS DENIED</span>
+            </p>
+        </section>
+
+        <section class="code-area">
+            <label for="codeInput">ACCESS CODE</label>
+            <input id="codeInput" type="text" maxlength="3" placeholder="000">
+            <button id="codeBtn">SUBMIT CODE</button>
+        </section>
+
+        <section class="controls">
+            <button id="scanBtn">SCAN ID</button>
+            <button id="redBtn" class="danger">BIG RED BUTTON</button>
+            <button id="resetBtn">RESET SYSTEM</button>
+        </section>
+
+        <section class="log">
+            <h2>SYSTEM LOG</h2>
+            <p id="logText">Waiting for suspicious activity...</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
