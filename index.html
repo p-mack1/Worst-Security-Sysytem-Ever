@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1>FACILITY SECURITY SYSTEM</h1>
 
     <main class="console">
-        <header class ="console-header">
+        <header class="console-header">
             <div>
                 <p class="eyebrow">FACILITY 404</p>
                 <h1>SECURITY CONTROL</h1>
@@ -28,6 +26,12 @@
             <p class="status-line">
                 STATUS: <span id="statusText">ACCESS DENIED</span>
             </p>
+            <div class="suspicion">
+                SUSPICION: <span id="suspicionText">0</span>%
+                <div class="meter">
+                    <div id="suspicionFill" class="meter-fill"></div>
+                </div>
+            </div>
         </section>
 
         <section class="code-area">
@@ -38,6 +42,8 @@
 
         <section class="controls">
             <button id="scanBtn">SCAN ID</button>
+            <button id="retinaBtn">RETINA SCAN</button>
+            <button id="voiceBtn">VOICE CHECK</button>
             <button id="redBtn" class="danger">BIG RED BUTTON</button>
             <button id="resetBtn">RESET SYSTEM</button>
         </section>

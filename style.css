@@ -5,9 +5,11 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: #10131a;
-    color: white;
-    font-family: Arial, sans-serif;
+    /* DESIGN CHANGE 1: dark green gradient background */
+    background: linear-gradient(160deg, #06110d, #10131a 60%);
+    color: #b8ffcf;
+    /* DESIGN CHANGE 2: terminal-style monospace font */
+    font-family: "Courier New", monospace;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
@@ -25,8 +27,11 @@ body {
 }
 
 .console-header, .screen, .code-area, .controls, .log {
-    border: 2px solid #697386;
-    background: #181d27;
+    /* DESIGN CHANGE 3: green borders, rounded corners, glow */
+    border: 2px solid #2f8f5b;
+    border-radius: 10px;
+    box-shadow: 0 0 14px rgba(70, 255, 150, 0.25);
+    background: #0c1a14;
     padding: 18px;
 }
 
@@ -39,15 +44,17 @@ body {
 .eyebrow {
     margin: 0;
     letter-spacing: 3px;
-    color: #aeb7c4;
+    color: #6fd39a;
 }
 
 h1, h2 {
     margin: 5px 0;
+    text-shadow: 0 0 8px rgba(70, 255, 150, 0.6);
 }
 
 .security-level {
-    border: 2px solid #aeb7c4;
+    border: 2px solid #6fd39a;
+    border-radius: 6px;
     padding: 10px 14px;
     font-weight: bold;
 }
@@ -61,6 +68,7 @@ h1, h2 {
     font-size: 42px;
     font-weight: bold;
     margin: 25px 0;
+    text-shadow: 0 0 12px rgba(70, 255, 150, 0.8);
 }
 
 .status-line {
@@ -78,8 +86,16 @@ h1, h2 {
 button {
     padding: 12px 16px;
     border: 0;
+    border-radius: 6px;
+    font-family: inherit;
     font-weight: bold;
     cursor: pointer;
+    background: #6fd39a;
+    color: #06110d;
+}
+
+button:hover {
+    background: #a4ffc7;
 }
 
 .controls button {
@@ -88,6 +104,12 @@ button {
 
 .danger {
     border: 3px solid #d45b5b;
+    background: #3a1414;
+    color: #ffb3b3;
+}
+
+.danger:hover {
+    background: #5a1c1c;
 }
 
 .code-area {
@@ -97,14 +119,50 @@ button {
 }
 
 input {
+    font-family: inherit;
     font-size: 24px;
     padding: 10px;
     text-align: center;
     letter-spacing: 8px;
+    background: #06110d;
+    color: #b8ffcf;
+    border: 2px solid #2f8f5b;
+    border-radius: 6px;
 }
 
 .warning {
     border: 3px solid #d6a23d;
+}
+
+/* NEW CSS class: JavaScript adds/removes this on the screen */
+.flinch {
+    animation: flinch 0.5s;
+}
+
+.suspicion {
+    margin-top: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.meter {
+    height: 16px;
+    margin-top: 6px;
+    border: 2px solid #2f8f5b;
+    border-radius: 8px;
+    background: #06110d;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    background: #6fd39a;
+    transition: width 0.3s, background 0.3s;
+}
+
+.meter-fill.hot {
+    background: #d45b5b;
 }
 
 .shake {
@@ -113,6 +171,14 @@ input {
 
 .lockdown {
     animation: alarmFlash 0.5s infinite alternate;
+}
+
+/* NEW animation for the scared retina scanner */
+@keyframes flinch {
+    0%   { transform: translateX(0) rotate(0deg); }
+    30%  { transform: translateX(-14px) rotate(-1.5deg); }
+    60%  { transform: translateX(-10px) rotate(-1deg); }
+    100% { transform: translateX(0) rotate(0deg); }
 }
 
 @keyframes shakeConsole {
